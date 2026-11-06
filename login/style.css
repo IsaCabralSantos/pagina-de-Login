@@ -1,0 +1,390 @@
+/* =================================
+   RESET (Corrigido o seletor *)
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =================================
+   BODY
+================================= */
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =================================
+   PÁGINA
+================================= */
+
+.pagina {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+
+/* =================================
+   LADO ESQUERDO
+================================= */
+
+.lado-esquerdo {
+    width: 50%;
+    height: 100%;
+}
+
+.lado-esquerdo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+/* =================================
+   LADO DIREITO
+================================= */
+
+.lado-direito {
+    width: 50%;
+    height: 100%;
+    background-color: #78004f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =================================
+   CAIXA DO LOGIN
+================================= */
+
+.login-box {
+    width: 580px;
+    height: 715px;
+    background-color: #f4e8f0;
+    border-radius: 25px;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =================================
+   LOGO
+================================= */
+
+.logo {
+    width: 220px;
+    margin-bottom: 100px;
+}
+
+
+/* =================================
+   FORMULÁRIO
+================================= */
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =================================
+   CAMPOS
+================================= */
+
+.campo {
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.campo label {
+    display: block;
+    font-size: 15px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.campo input {
+    width: 100%;
+    height: 45px;
+    padding: 0 15px;
+    border: 1px solid #78004f;
+    border-radius: 25px;
+    background: transparent;
+    outline: none;
+    font-size: 15px;
+}
+
+.campo input:focus {
+    border: 2px solid #78004f;
+}
+
+
+/* =================================
+   MENSAGEM DE ERRO (Corrigido)
+================================= */
+
+#mensagem-erro {
+    display: none;             /* Inicialmente oculto; JS altera para flex */
+    align-items: center;       /* Alinha na vertical o ícone com o texto */
+    justify-content: center;   /* Centraliza o conteúdo na caixa */
+    gap: 8px;                  /* Espaçamento entre o ícone e o texto */
+    color: #d60000;
+    font-size: 12px;
+    width: 100%;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    white-space: nowrap;       /* Evita quebras de linha que encavalem elementos */
+}
+
+#mensagem-erro span:first-child {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;          /* Evita que a bolinha achate */
+    min-height: 16px;
+    border: 1px solid #d60000;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1;
+    flex-shrink: 0;           /* Garante isolamento flex do ícone */
+}
+
+
+/* =================================
+   BOTÃO
+================================= */
+
+button {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 25px;
+    background-color: #78004f;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #620041;
+}
+
+
+/* =================================
+   TELA DE CARREGAMENTO
+================================= */
+
+.loading {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(120, 0, 79, 0.88);
+    z-index: 1000;
+}
+
+
+/* =================================
+   CONTEÚDO DO LOADING
+================================= */
+
+.loading-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =================================
+   ÁREA DA CANECA
+================================= */
+
+.cup-area {
+    position: relative;
+    width: 145px;
+    height: 190px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+/* =================================
+   FUMAÇA
+================================= */
+
+.steam {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    width: 78px;
+    height: 135px;
+    transform: translateX(-50%);
+    overflow: visible;
+    z-index: 1;
+}
+
+
+/* =================================
+   FORMATO DA FUMAÇA
+================================= */
+
+.steam-shape {
+    fill: url(#steamGradient);
+    opacity: 0;
+    transform-origin: center bottom;
+    animation: rise 2.4s ease-in-out infinite;
+}
+
+
+/* =================================
+   ANIMAÇÃO DA FUMAÇA
+================================= */
+
+@keyframes rise {
+    0% {
+        opacity: 0;
+        transform: translateY(14px) scaleY(0.85);
+    }
+    20% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 1;
+        transform: translateY(-4px) scaleY(1.05);
+    }
+    85% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-16px) scaleY(1.1);
+    }
+}
+
+
+/* =================================
+   CANECA
+================================= */
+
+.cup-image {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 145px;
+    height: auto;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+    filter: brightness(0) invert(1);
+}
+
+
+/* =================================
+   TEXTO CARREGANDO
+================================= */
+
+.loading-text {
+    margin-top: 25px;
+    color: white;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+
+/* =================================
+   PONTINHOS
+================================= */
+
+.dots {
+    display: inline-block;
+    width: 20px;
+    text-align: left;
+}
+
+
+/* =================================
+   ACESSIBILIDADE
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .steam-shape {
+        animation: none;
+        opacity: 0.7;
+    }
+}
+
+
+/* =================================
+   TELA MENOR
+================================= */
+
+@media (max-height: 850px) {
+    .login-box {
+        width: 450px;
+        height: 555px;
+        padding: 55px;
+    }
+
+    .logo {
+        width: 170px;
+        margin-bottom: 65px;
+    }
+
+    .campo {
+        margin-bottom: 20px;
+    }
+
+    .campo input {
+        height: 35px;
+    }
+
+    button {
+        height: 35px;
+    }
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 900px) {
+    .lado-esquerdo {
+        display: none;
+    }
+
+    .lado-direito {
+        width: 100%;
+    }
+
+    .login-box {
+        width: 90%;
+        max-width: 580px;
+    }
+}
