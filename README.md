@@ -1,6 +1,6 @@
 # Login Expresso
 
-Uma aplicação web moderna e responsiva de autenticação (Login) desenvolvida com foco em **UI/UX**, integração com **APIs REST** (obtenção e armazenamento de `access_token`) e animações customizadas utilizando **HTML5, CSS3 e JavaScript (Vanilla)**.
+Uma aplicação web responsiva de autenticação (Login) desenvolvida com foco em **UI/UX**, integração com **APIs REST** (obtenção e armazenamento de `access_token`) e animações customizadas utilizando **HTML5, CSS3 e JavaScript (Vanilla)**.
 
 ---
 
