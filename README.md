@@ -60,7 +60,7 @@ Apenas um navegador web atualizado (Google Chrome, Mozilla Firefox, Microsoft Ed
 
 1. **Clonar o repositório:**
    ```bash
-   git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+   git clone https://github.com/IsaCabralSantos/pagina-de-Login
    ```
 
 2. **Navegar até o diretório do projeto:**
